@@ -119,3 +119,36 @@ INSERT INTO Course(name, ects, level) VALUES("Cybersecurity", 90, "Msc");
 INSERT INTO Country(name) VALUES("CH");
 INSERT INTO Country(name) VALUES("CN");
 INSERT INTO Country(name) VALUES("UK");
+
+INSERT INTO Person(id, firstname, middlename, surname, date_of_birth, joined, is_actvie)
+VALUES
+  (1, "Alice",  "M.", "Johnson",     "1998-05-12", "2024-09-01", 1),
+  (2, "Brian",  NULL, "Smith",       "1995-11-23", "2023-02-15", 1),
+  (3, "Chen",   NULL, "Wang",        "1999-03-09", "2024-09-01", 1);
+
+
+INSERT INTO Citizenship(person_id, country_id, visa)
+VALUES
+  (1, 3, NULL),          
+  (2, 3, NULL),          
+  (3, 2, "Student Visa"); 
+
+INSERT INTO PersonAddress(person_id, country_id, kind, street, postcode, number, alternative_name)
+VALUES
+  (1, 3, "H", "Baker Street",    "WC2N 5DU", 221, NULL),
+  (2, 3, "H", "King Street",     "W1A 1AA",   10, NULL),
+  (3, 3, "H", "Oxford Road",     "M13 9PL",   42, NULL);
+
+
+INSERT INTO PersonRole(person_id, role_id, is_main, since)
+VALUES
+  (1, 1, 1, "2024-09-01"), 
+  (2, 2, 1, "2023-02-15"),
+  (3, 1, 1, "2024-09-01");
+
+
+INSERT INTO Enrollment(person_id, course_id, role_id, start, end)
+VALUES
+  (1, 1, 1, "2024-09-01", NULL), 
+  (2, 3, 2, "2023-03-01", NULL), 
+  (3, 2, 1, "2024-09-01", NULL); 
