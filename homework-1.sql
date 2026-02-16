@@ -1,3 +1,4 @@
+--------------------------- Data definition ---------------------------
 
 CREATE TABLE Citizenship
 (
@@ -24,6 +25,7 @@ CREATE TABLE Course
   level          TEXT    NOT NULL,
   is_active      INTEGER NOT NULL DEFAULT 1,
   nationals_only INTEGER NOT NULL DEFAULT 0,
+  is_part_time   INTEGER NOT NULL DEFAULT 0,
   PRIMARY KEY (id)
 );
 
@@ -87,7 +89,7 @@ CREATE TABLE Role
 CREATE INDEX idx_names
   ON Person (middlename ASC, firstname ASC, surname ASC);
 
-CREATE INDEX idx_country
+CREATE UNIQUE INDEX idx_country
   ON Country (name ASC);
 
 CREATE INDEX idx_citizenship
@@ -99,5 +101,21 @@ CREATE UNIQUE INDEX idx_enrollment
 CREATE INDEX idx+personrole
   ON PersonRole (person_id ASC, role_id ASC);
 
-CREATE INDEX idx_course
+CREATE UNIQUE INDEX idx_course
   ON Course (name ASC);
+
+CREATE UNIQUE INDEX idx_role
+  ON Role (name ASC);
+
+--------------------------- Data manipulation ---------------------------
+
+INSERT INTO Role(name) VALUES("Student");
+INSERT INTO Role(name) VALUES("Lecturer");
+
+INSERT INTO Course(name, ects, level) VALUES("Computer Science", 90, "Msc");
+INSERT INTO Course(name, ects, level) VALUES("Data science", 90, "Msc");
+INSERT INTO Course(name, ects, level) VALUES("Cybersecurity", 90, "Msc");
+
+INSERT INTO Country(name) VALUES("CH");
+INSERT INTO Country(name) VALUES("CN");
+INSERT INTO Country(name) VALUES("UK");
