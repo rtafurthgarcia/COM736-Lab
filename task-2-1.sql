@@ -137,7 +137,7 @@ INSERT INTO plans (creation, initiator_id, patients_id, admissions_id, medical_s
 
 INSERT INTO performed_actions (admissions_id, planned_on, is_done, actions_id, roles_id, medical_staff_id, performed_on, rooms_id) VALUES
 (1, '2023-01-11 09:00:00', 1, 1, 1, 1, '2023-01-11 10:00:00', 1),
-(2, '2023-02-06 08:30:00', 1, 6, 1, 2, '2023-02-06 09:30:00', 2),
+(1, '2023-02-06 08:30:00', 1, 6, 1, 2, '2023-02-06 09:30:00', 2),
 (3, '2023-03-21 10:00:00', 0, 11, 1, 3, '2023-03-21 11:15:00', 3),
 (4, '2023-04-13 13:00:00', 1, 16, 1, 4, '2023-04-13 13:45:00', 4),
 (5, '2023-05-26 07:30:00', 1, 21, 1, 5, '2023-05-26 08:00:00', 5);
